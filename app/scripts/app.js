@@ -20,7 +20,10 @@
             templateUrl:'/templates/collection.html'
         });
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> checkpoint-4-templates
     angular
         .module('blocJams', ['ui.router'])
         .config(config);
