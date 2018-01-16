@@ -27,21 +27,34 @@
 
         currentSong = song;
      };
-         
+    
+     /**
+     * @function playSong
+     * @play the current Buzz object and set the playing property of the song object to true
+     */
+     function playSong() {
+         currentBuzzObject.play();
+         song.playing = true;         
+     }
+    
+     /**
+     * @method play a song
+     */
      SongPlayer.play = function(song) {
         if (currentSong !== song) {
              setSong(song);
-             currentBuzzObject.play();
-             song.playing = true;
+             playSong();
             
          } else if (currentSong === song) {
              if (currentBuzzObject.isPaused()) {
-                 currentBuzzObject.play();
-                 song.playing = true;
+                 playSong();
          }
         }       
      };
          
+     /**
+     * @method pause a song
+     */         
      SongPlayer.pause = function(song) {
          currentBuzzObject.pause();
          song.playing = false;
