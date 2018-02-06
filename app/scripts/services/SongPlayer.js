@@ -18,6 +18,8 @@
     * @type {Number}
     */
     SongPlayer.currentTime = null;     
+          
+     SongPlayer.volume = 70;
     
     var currentBuzzObject = null;
     
@@ -132,11 +134,18 @@
              currentBuzzObject.setTime(time);
          }
      };
-         
+       
+    SongPlayer.setVolume = function(volume){
+        if(currentBuzzObject){
+            currentBuzzObject.setVolume(volume);
+        }
+        SongPlayer.volume = volume
+    }
+          
           return SongPlayer;
      }
     
-  
+    
     
  
      angular
